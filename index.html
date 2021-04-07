@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <style>
+        td {
+            border: 1px solid red;
+            width: 33px;
+            height: 22px;
+        }
+    </style>
+</head>
+<body>
+    <table class="panel"> 
+        <tr>
+            <td data-name="1" class="editValue">1</td>
+            <td data-address="2" class="editValue">2</td>
+            <td data-client="12" class="editValue">12</td>
+        </tr> 
+    </table>	
+    <script>
+        $(document).ready(function(){
+        $(document).delegate('.editValue', 'click', function(event){
+            $(this).select();
+            if($(this).find("input").val() === undefined) {
+                var newValue = $(this).text();
+
+                $(this).empty();	
+                $(this).append("<input type=\"text\" name=\"editValue\" class=\"rejProW right\" value=\""+newValue+"\" style=\"width:25px;\" />");
+                $(this).find("input").select();			
+            }
+            });	
+            $(document).delegate('.editValue', 'blur', function(event){
+            if($(this).find("input").val() !== undefined) {
+                var el = $(this).find("input");
+                var newValue = parseInt(el.val()) || 0; //sprawdz czy jest liczba całkowita
+                el.remove();
+                        var nazwaAtrybutu = $(this)[0].attributes[0].nodeName;
+
+                if(nazwaAtrybutu.substring(0, 5) == "data-") {
+                $(this).attr(nazwaAtrybutu, newValue);
+                $(this).text(newValue);
+                }
+            } 
+            });	
+            $(document).delegate('.editValue', 'keydown', function(e) { 
+            var keyCode = e.keyCode || e.which; 
+            var el = $(this).find(".editValue");
+            var newValue = parseInt($(this).val()) || 0;
+
+            $(this).closest('td').attr("data-editValue", newValue);
+            if (keyCode == 9) { 
+                var el = $(this).next(".editValue");
+                var newValue = el.text();
+
+                el.empty();			
+                el.append("<input type=\"text\" name=\"editValue\" class=\"rejProW right\" value=\""+newValue+"\" style=\"width:25px;\" />");
+            } 
+            });
+        })       
+    </script>				
+</body>
+</html> 
