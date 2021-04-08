@@ -6,4 +6,4 @@ Typing into an input field is make your websites slow.
 Use this method!
 
 ## View in JSFiddle
-[License File](https://jsfiddle.net/emkrysto/4zp126Lc/3/)
+[JSFiddle link](https://jsfiddle.net/emkrysto/4zp126Lc/3/)
