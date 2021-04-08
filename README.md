@@ -5,5 +5,5 @@ Dynamic html input on your website.
 Typing into an input field is make your websites slow.
 Use this method!
 
-## View injsqfiddle
+## View in JSFiddle
 [License File](https://jsfiddle.net/emkrysto/4zp126Lc/3/)
