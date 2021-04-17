@@ -3,7 +3,7 @@ Dynamic html input on your website.
 
 ![dynam_input](img/dynam_input.png)
 
-## Too Many Inputs In Html Form
+## Too many input field in one page
 Typing into an input fields are make your websites slow.
 Use this method!
 
